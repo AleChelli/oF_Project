@@ -7,12 +7,14 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
+    ofSetFrameRate(30);
+    b.update();
 
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
-
+    b.display();
 }
 
 //--------------------------------------------------------------
@@ -56,6 +58,6 @@ void testApp::gotMessage(ofMessage msg){
 }
 
 //--------------------------------------------------------------
-void testApp::dragEvent(ofDragInfo dragInfo){ 
+void testApp::dragEvent(ofDragInfo dragInfo){
 
 }
