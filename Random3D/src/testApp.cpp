@@ -2,7 +2,7 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-    mesh.setMode(OF_PRIMITIVE_LINE_STRIP);
+    mesh.setMode(OF_PRIMITIVE_POINTS);
     mesh.enableColors();
     ofBackground(0);
 
