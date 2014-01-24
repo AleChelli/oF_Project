@@ -2,7 +2,7 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-    for(int i=0;i<10;i++){
+    for(int i=0;i<100;i++){
         m[i].initialize(ofRandom(0.1,5),0,0);
     }
     wind.set(0.01,0);
@@ -12,7 +12,7 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
-    for(int i=0;i<10;i++){
+    for(int i=0;i<100;i++){
         m[i].applyForce(wind);
         m[i].applyForce(gravity);
         m[i].update();
@@ -24,7 +24,7 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    for(int i = 0 ; i<10; i++){
+    for(int i = 0 ; i<100; i++){
         m[i].display();
     }
 

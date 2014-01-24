@@ -17,6 +17,7 @@ public:
     ofVec3f location;
     ofVec3f velocity;
     ofVec3f acceleration;
+    ofVec3f c;
     float mass;
 };
 #endif // mover_h

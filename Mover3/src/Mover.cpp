@@ -12,6 +12,7 @@ void Mover::initialize(float m, float x, float y){
     location.set(x, y,0);
     velocity.set(0,0,0);
     acceleration.set(0,0,0);
+    c.set(ofMap(ofRandom(mass),0,mass,0,255),ofMap(ofRandom(mass),0,mass,0,255),ofMap(ofRandom(mass),0,mass,0,255));
 }
 
 void Mover::checkEdges(){
@@ -45,7 +46,7 @@ void Mover::update(){
 }
 
 void Mover::display(){
-    ofSetColor(ofColor::black);
+    ofSetColor(c.x,c.y,c.z);
     ofDrawSphere(location.x,location.y,0,ofMap(mass,0.1,5,1,20));
 
 }
