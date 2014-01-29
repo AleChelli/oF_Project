@@ -12,7 +12,7 @@ void Mover::initialize(float m, float x, float y){
     location.set(x, y,0);
     velocity.set(0,0,0);
     acceleration.set(0,0,0);
-    c.set(ofMap(ofRandom(mass),0,mass,0,255),ofMap(ofRandom(mass),0,mass,0,255),ofMap(ofRandom(mass),0,mass,0,255));
+    c=60;
 }
 
 void Mover::checkEdges(){
@@ -34,7 +34,8 @@ void Mover::checkEdges(){
 }
 
 void Mover::applyForce(ofVec3f force) {
-    ofVec3f f = force/mass;
+    float M = 1/mass;
+    ofVec3f f = force*M;
     acceleration +=f;
 }
 
@@ -46,11 +47,11 @@ void Mover::update(){
 }
 
 void Mover::display(){
-    ofSetColor(c.x,c.y,c.z);
+    ofSetColor(c);
     ofDrawSphere(location.x,location.y,0,ofMap(mass,0.1,5,1,20));
 
 }
 
-float Mover::getM(){
+int Mover::getM(){
     return mass;
 }

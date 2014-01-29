@@ -2,19 +2,28 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-    for(int i=0;i<100;i++){
-        m[i].initialize(ofRandom(0.1,5),0,0);
+    for(int i=0;i<10;i++){
+        m[i].initialize(ofRandom(1,5),i*100,0);
     }
-    wind.set(0.01,0);
-    gravity.set(0,0.1);
-
+    wind.set(0.01,0,0);
+    gravity.set(0,0.1,0);
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-    for(int i=0;i<100;i++){
+    for(int i=0;i<10;i++){
+        M=m[i].mass;
+        ofVec3f gravit;
+        gravit.set(0,gravity.y*M,0);
+        float c = 0.01; //Coefficente di attrito
+        ofVec3f friction;
+        friction = m[i].velocity;
+        friction*=(-1);
+        friction.normalize();
+        friction*=c;
+        m[i].applyForce(friction);
         m[i].applyForce(wind);
-        m[i].applyForce(gravity);
+        m[i].applyForce(gravit);
         m[i].update();
         m[i].checkEdges();
 
@@ -24,7 +33,7 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    for(int i = 0 ; i<100; i++){
+    for(int i = 0 ; i<10; i++){
         m[i].display();
     }
 

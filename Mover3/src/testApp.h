@@ -23,5 +23,6 @@ class testApp : public ofBaseApp{
 		Mover m[100];
 		ofVec3f wind;
 		ofVec3f gravity;
+		float M;
 
 };

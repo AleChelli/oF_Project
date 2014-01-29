@@ -12,12 +12,12 @@ public:
     void applyForce(ofVec3f force);
     void update();
     void display();
-    float getM();
+    int getM();
 
     ofVec3f location;
     ofVec3f velocity;
     ofVec3f acceleration;
-    ofVec3f c;
+    int c;
     float mass;
 };
 #endif // mover_h
